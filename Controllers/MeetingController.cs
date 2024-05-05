@@ -14,7 +14,7 @@ namespace MeetingScheduler.Controllers
             _meetingService = meetingService;
         }
 
-        [HttpGet]
+        [HttpGet("findAvailableMeetingTimes")]
         public async Task<ActionResult<List<DateTime>>> FindAvailableTimeAsync([FromQuery] List<Guid> calendarIds, [FromQuery] int duration, [FromQuery] string periodToSearch, [FromQuery] Guid? timeSlotType = null)
         {
             try
